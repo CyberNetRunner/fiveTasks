@@ -4,12 +4,15 @@
 
 #lists
 numbers = [1, 2, 3, 4, 5, 4, 34, 23, 65, 26, 62]
+numbers_two = [1, 2, 3, 4, 5]
+letters = ["a", "b", "c", "d", "e"]
 
 #  FIRST TASK:
 #  Write three functions that sum the numbers
 #  in a given list using a for loop, a while loop,
 #  and recursion.
 class FirstTask():
+    print()
     print("First task:")
     print()
 
@@ -52,8 +55,23 @@ class FirstTask():
 #  by alternating elements. For example, given
 #  the two lists [a, b, c] and [1, 2, 3], the function
 #  should return [a, 1, b, 2, c, 3].
-def SecondTask():
-    pass
+def SecondTask(firstList, secondList):
+    print()
+    print("Second Task:")
+    print()
+
+    list = []
+    length = max(len(firstList), len(secondList))
+    index = 0
+
+    while index < length:
+        list.append(firstList[index])
+        list.append(secondList[index])
+        index += 1
+
+    print(firstList)
+    print(secondList)
+    print(list)
 
 
 #  THIRD TASK:
@@ -86,10 +104,12 @@ def FifthTask():
 
 #main function
 def main():
+    #call 1st task solution
     FirstTask.ForLoop(numbers)
     FirstTask.WhileLoop(numbers)
     FirstTask.Recursion(numbers)
-
+    #call 2nd task solution
+    SecondTask(numbers_two, letters)
 
 #init main function
 if __name__ == "__main__":
