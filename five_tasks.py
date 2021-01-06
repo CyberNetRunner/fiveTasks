@@ -81,8 +81,19 @@ def SecondTask(firstList, secondList):
 #  subsequent number is the sum of the previous two.
 #  As an example, here are the first 10 Fibonacci
 #  numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21 and 34.
-def ThirdTask():
-    pass
+def ThirdTask(limit):
+    print()
+    print("Third Task:")
+    print()
+
+    a, b = 0, 1
+    list = []
+
+    for index in range(limit):
+        list.append(a)
+        a, b = b, a + b
+
+    print(list)
 
 
 #  FOURTH TASK:
@@ -110,6 +121,8 @@ def main():
     FirstTask.Recursion(numbers)
     #call 2nd task solution
     SecondTask(numbers_two, letters)
+    #call 3rd task solution
+    ThirdTask(100)
 
 #init main function
 if __name__ == "__main__":
