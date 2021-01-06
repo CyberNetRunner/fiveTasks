@@ -2,14 +2,14 @@
     (c)CyberNetRinner
 '''
 
+#lists
+numbers = [1, 2, 3, 4, 5, 4, 34, 23, 65, 26, 62]
 
 #  FIRST TASK:
 #  Write three functions that sum the numbers
 #  in a given list using a for loop, a while loop,
 #  and recursion.
-def FirstTask():
-    numbers = [1, 2, 3, 4, 5, 4, 34, 23, 65, 26, 62]
-
+class FirstTask():
     print("First task:")
     print()
 
@@ -40,23 +40,11 @@ def FirstTask():
     def Recursion(list):
         sum, addend = 0, 0
 
-        def summ(list):
-            if len(list) == 0:
-                return 0
-            else:
-                return(list[0])+summ(list[1:])
-
-        sum = summ(list)
+        summ = lambda list:0 if(len(list) == 0) else list[0]+summ(list[1:])
 
         print("Recursion solution:")
         print(list)
-        print(sum)
-
-
-    #functions call
-    ForLoop(numbers)
-    WhileLoop(numbers)
-    Recursion(numbers)
+        print(summ(list))
 
 
 #  SECOND TASK:
@@ -98,7 +86,10 @@ def FifthTask():
 
 #main function
 def main():
-    FirstTask()
+    FirstTask.ForLoop(numbers)
+    FirstTask.WhileLoop(numbers)
+    FirstTask.Recursion(numbers)
+
 
 #init main function
 if __name__ == "__main__":
