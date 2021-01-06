@@ -1,4 +1,5 @@
 ''' five tasks
+    (c)CyberNetRinner
 '''
 
 
@@ -7,7 +8,55 @@
 #  in a given list using a for loop, a while loop,
 #  and recursion.
 def FirstTask():
-    pass
+    numbers = [1, 2, 3, 4, 5, 4, 34, 23, 65, 26, 62]
+
+    print("First task:")
+    print()
+
+    #first solution
+    def ForLoop(list):
+        sum = 0
+
+        for addend in list:
+            sum += addend
+
+        print("For loop:")
+        print(list)
+        print(sum)
+
+    #second solution
+    def WhileLoop(list):
+        sum, addend = 0, 0
+
+        while addend < len(list):
+            sum += list[addend]
+            addend += 1
+
+        print("While loop:")
+        print(list)
+        print(sum)
+
+    #third solution
+    def Recursion(list):
+        sum, addend = 0, 0
+
+        def summ(list):
+            if len(list) == 0:
+                return 0
+            else:
+                return(list[0])+summ(list[1:])
+
+        sum = summ(list)
+
+        print("Recursion solution:")
+        print(list)
+        print(sum)
+
+
+    #functions call
+    ForLoop(numbers)
+    WhileLoop(numbers)
+    Recursion(numbers)
 
 
 #  SECOND TASK:
@@ -49,7 +98,7 @@ def FifthTask():
 
 #main function
 def main():
-    pass
+    FirstTask()
 
 #init main function
 if __name__ == "__main__":
