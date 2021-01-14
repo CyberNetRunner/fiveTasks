@@ -3,9 +3,21 @@
 '''
 
 # lists
-numbers = [1, 2, 3, 4, 5, 4, 34, 23, 65, 26, 62]
+numbers = [1, 2, 4, 5, 4, 34, 65, 6, 100]
 numbers_two = [1, 2, 3, 4, 5]
 letters = ["a", "b", "c", "d", "e"]
+
+
+# algorithms
+def BubbleSortByFirstDigit(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            jx = str(arr[j])
+            jz = str(arr[j+1])
+            if jx[0] < jz[0]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
 
 
 #  FIRST TASK:
@@ -42,8 +54,6 @@ class FirstTask():
 
     # third solution
     def SumRecursion(list):
-        sum, addend = 0, 0
-
         summ = lambda list:0 if(len(list) == 0) else list[0]+summ(list[1:])
 
         print("Recursion solution:")
@@ -102,8 +112,20 @@ def ThirdTask(limit):
 #  integers and orders them so that they are as large
 #  as possible. For example, [50, 2, 1, 9], the largest
 #  generated number is 95021.
-class FourthTask():
-    pass
+def FourthTask(list):
+    print("___________________________________________")
+    print("Fourth Task:")
+    print("___________________________________________")
+    print(list)
+
+    arr = BubbleSortByFirstDigit(list)
+    result = ""
+
+    for index in arr:
+        result += str(index)
+
+    print(arr)
+    print(int(result))
 
 
 #  FIFTH TASK:
@@ -122,6 +144,7 @@ def main():
     FirstTask.SumRecursion(numbers)
     SecondTask(numbers_two, letters)
     ThirdTask(10)
+    FourthTask(numbers)
 
 
 # init main function
