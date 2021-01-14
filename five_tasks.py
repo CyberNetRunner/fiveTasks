@@ -1,23 +1,24 @@
 ''' five tasks
-    (c)CyberNetRinner
+    (c)CyberNetRunner
 '''
 
-#lists
+# lists
 numbers = [1, 2, 3, 4, 5, 4, 34, 23, 65, 26, 62]
 numbers_two = [1, 2, 3, 4, 5]
 letters = ["a", "b", "c", "d", "e"]
+
 
 #  FIRST TASK:
 #  Write three functions that sum the numbers
 #  in a given list using a for loop, a while loop,
 #  and recursion.
 class FirstTask():
-    print()
+    print("___________________________________________")
     print("First task:")
-    print()
+    print("___________________________________________")
 
-    #first solution
-    def ForLoop(list):
+    # first solution
+    def SumFirstSolution(list):
         sum = 0
 
         for addend in list:
@@ -27,8 +28,8 @@ class FirstTask():
         print(list)
         print(sum)
 
-    #second solution
-    def WhileLoop(list):
+    # second solution
+    def SumSecondSolution(list):
         sum, addend = 0, 0
 
         while addend < len(list):
@@ -39,8 +40,8 @@ class FirstTask():
         print(list)
         print(sum)
 
-    #third solution
-    def Recursion(list):
+    # third solution
+    def SumRecursion(list):
         sum, addend = 0, 0
 
         summ = lambda list:0 if(len(list) == 0) else list[0]+summ(list[1:])
@@ -56,9 +57,9 @@ class FirstTask():
 #  the two lists [a, b, c] and [1, 2, 3], the function
 #  should return [a, 1, b, 2, c, 3].
 def SecondTask(firstList, secondList):
-    print()
+    print("___________________________________________")
     print("Second Task:")
-    print()
+    print("___________________________________________")
 
     list = []
     length = max(len(firstList), len(secondList))
@@ -82,9 +83,9 @@ def SecondTask(firstList, secondList):
 #  As an example, here are the first 10 Fibonacci
 #  numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21 and 34.
 def ThirdTask(limit):
-    print()
+    print("___________________________________________")
     print("Third Task:")
-    print()
+    print("___________________________________________")
 
     a, b = 0, 1
     list = []
@@ -101,7 +102,7 @@ def ThirdTask(limit):
 #  integers and orders them so that they are as large
 #  as possible. For example, [50, 2, 1, 9], the largest
 #  generated number is 95021.
-def FourthTask():
+class FourthTask():
     pass
 
 
@@ -113,17 +114,16 @@ def FourthTask():
 def FifthTask():
     pass
 
-#main function
-def main():
-    #call 1st task solution
-    FirstTask.ForLoop(numbers)
-    FirstTask.WhileLoop(numbers)
-    FirstTask.Recursion(numbers)
-    #call 2nd task solution
-    SecondTask(numbers_two, letters)
-    #call 3rd task solution
-    ThirdTask(100)
 
-#init main function
+# main function
+def main():
+    FirstTask.SumFirstSolution(numbers)
+    FirstTask.SumSecondSolution(numbers)
+    FirstTask.SumRecursion(numbers)
+    SecondTask(numbers_two, letters)
+    ThirdTask(10)
+
+
+# init main function
 if __name__ == "__main__":
     main()
